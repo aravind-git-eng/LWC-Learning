@@ -1,0 +1,58 @@
+<template>
+    <div class="slds-p-around_small">
+        <lightning-card
+            variant="narrow"
+            icon-name="standard:opportunity">
+        <h1 slot="title">This is a title standard lightning card</h1>
+        <h1>This is the body</h1>
+        <div slot="actions">
+            <lightning-button-icon icon-name="utility:down"></lightning-button-icon>
+        </div>
+        <div slot="footer">
+            <h6>This is the footer</h6>
+        </div>
+    </lightning-card>
+    </div>
+    <div class="slds-p-around_small">
+        
+    </div>
+    <div class="slds-p-around_small">
+        <c-custom-lightning-card>
+            <h1 slot="title">This is a title from custom lightning card</h1>
+            <h1>This is the body from custom lightning</h1>
+            <div slot="action">
+                <lightning-button-icon icon-name="utility:down"></lightning-button-icon>
+            </div>
+            <div slot="footer">
+                <h6>This is the footer from custom lightning</h6>
+            </div>
+        </c-custom-lightning-card>
+    </div>
+    <div class="slds-p-around_small">
+        <c-custom-lightning-card>
+            <h1 slot="title">with out footer</h1>
+            <h1>This is the body from custom lightning</h1>
+            <div slot="action">
+                <lightning-button-icon icon-name="utility:down"></lightning-button-icon>
+            </div>
+            
+        </c-custom-lightning-card> 
+    </div>
+    <div class="slds-p-around_medium">
+        <c-custom-lightning-card>
+            <h1 slot="title">with out action</h1>
+            <h1>This is the body from custom lightning</h1>
+            
+            <div slot="footer">
+                <h6>This is the footer from custom lightning</h6>
+            </div>
+        </c-custom-lightning-card>
+    </div>
+    
+    <div class="slds-p-around_medium">
+        <c-custom-lightning-card>
+            <h1 slot="title">only with tille</h1>
+            
+        </c-custom-lightning-card>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <div>Hey Im child: What is your name </div>
+    <div><slot name="first"></slot></div><!--un names slot-->
+    <div>Hey Im child: What is your age </div>
+    <div><slot name="second"></slot></div>
+    <footer class="slds-card__footer slds-hide">
+        <slot name="footer" onslotchange={slotHandler}></slot>
+    </footer>
+</template>

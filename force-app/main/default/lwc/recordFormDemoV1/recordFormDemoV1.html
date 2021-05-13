@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Create record using lightning-record-form">
+        <lightning-record-form
+        object-api-name={objectName}
+        fields={fieldList}
+        onsuccess={successHandler}
+        ></lightning-record-form>
+    </lightning-card>
+    <lightning-card title="edit compact layout record using lightning-record-form">
+        <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectName}
+        mode="edit"
+        columns="2"
+        layout-type="Compact"
+        
+        ></lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="edit Full  layout record using lightning-record-form">
+        <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectName}
+        mode="edit"
+        columns="2"
+        layout-type="Full"
+            
+        ></lightning-record-form>
+    </lightning-card>
+        
+
+</template>

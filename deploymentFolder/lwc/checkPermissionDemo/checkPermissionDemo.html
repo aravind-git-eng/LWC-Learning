@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="user Permission Check">
+        <template if:true={hasViewAllDataPermission}>
+            <p>Hurry!! I have viewAllData permission</p>
+        </template>
+        <template if:false={hasViewAllDataPermission}>
+            <p>Opps!!!Hurry!!! I dont have viewAllData persimission</p>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Custom shoe detail permission">
+        <template if:true={hasCustomShowDetailsPermission}>
+            <p>Hurry!!! i have custom show detail permission</p>
+        </template>
+        <template if:false={hasCustomShowDetailsPermission}>
+            <p>>Opps !! hurry!! idont have shpw detail permission</p>
+        </template>
+    </lightning-card>
+</template>

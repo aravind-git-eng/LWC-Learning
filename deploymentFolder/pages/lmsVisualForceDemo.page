@@ -1,0 +1,61 @@
+<apex:page lightningStylesheets="true"><!--to access lightning slds class in vf -->
+    <apex:slds></apex:slds>
+    <div class="slds-scope">
+        <div class="slds-p-around_medium">
+            <label>Enter message to publish</label>
+            <input type="text" class="slds-text" id="messageField"/>
+            <div class="slds-p-top_small slds-p-bottom_small">
+                <button class="slds-button slds-button_neutral" onclick="publishHandler()">Publish</button>
+                <button class="slds-button slds-button_neutral" onclick="subscribeHandler()">Subscribe</button>
+                <button class="slds-button slds-button_neutral" onclick="unSubcribeHandler()">Un-Subscribe</button>
+
+            </div>
+            
+            <p>Message Received</p>
+            <div id="receivedMessage"></div>
+            
+        </div>
+    </div>
+    
+    <script>
+        let SAMPLEMC = "{!$MessageChannel.SampleMessageChannel__c}" //message channel reference
+        let subscriptionToMC;
+        function publishHandler(){
+            console.log("--in publish handler--");
+            let data = document.getElementById("messageField").value;
+            console.log("--datdat--"+data);
+            message = {
+                lmsData:{
+                    value:data
+                }
+            }
+            console.log("--message--"+message);
+            sforce.one.publish(SAMPLEMC, message);
+        }
+        function subscribeHandler(){
+            console.log("--in subscribe--"+!subscriptionToMC);
+            if(!subscriptionToMC){
+                    console.log("---in subscription if---");
+                subscriptionToMC =  sforce.one.subscribe(SAMPLEMC, msgHandler,{scope:"APPLICATION"});
+                console.log("-----subscriptiontomc---"+subscriptionToMC);
+            }
+           
+        }
+        function msgHandler(message){
+            console.log("---in msghandler--"+message);
+            let receivedMessage = document.getElementById("receivedMessage");
+            console.log("----receivedMessage--"+receivedMessage);
+            console.log("--message.lmsData.value---"+message.lmsData.value);
+            receivedMessage.innerHTML = message && message.lmsData ? message.lmsData.value : "No Message receied";
+        }
+        function unSubcribeHandler(){
+            console.log("---unsubscribe---");
+            if(subscriptionToMC){
+                sforce.one.unsubscribe(subscriptionToMC);
+                subscriptionToMC=null;
+                console.log("--inside unsubscribe if___");
+            }
+            
+        }
+    </script>
+</apex:page>

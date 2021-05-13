@@ -1,0 +1,30 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <div class="slds-card__header-link slds-truncate" >
+                  <span>Here title will come</span>
+                  <slot name="title"></slot>
+                </div>
+              </h2>
+            </div>
+            <div class="slds-no-flex">
+              <!--<button class="slds-button slds-button_neutral">Action Button will come</button>-->
+              <slot name="action"></slot>
+            </div>
+          </header>
+        </div>
+          <div class="slds-card__body">
+              here body will come
+              <slot></slot>
+          </div>
+          <footer class="slds-card__footer slds-hide">
+              here footer will coome
+              <slot name="footer" onslotchange={handleSlotChange}></slot>
+          </footer>
+        
+      </article>
+</template>

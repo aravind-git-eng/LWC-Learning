@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="p2c primitive data types">
+        <c-p2c-alert-component message="This msg from parent to child" card-heading="Heading from parent To child" number=20 is-valid>
+
+        </c-p2c-alert-component> 
+    </lightning-card><br></br>
+    <lightning-card title="p2c non premitive data types">
+        <c-p2c-carousle-componet carousle-details={carousleData}>
+
+        </c-p2c-carousle-componet>
+    </lightning-card>
+
+   
+ <!--
+    <lightning-card title="p2c action communication : action on parent on event">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="number" label="Enter some Peercentage" onkeyup={percentageHandler} value={percentageNum}></lightning-input>
+            <c-p2c-progress-bar progress-value={percentageNum} ></c-p2c-progress-bar>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="p2c slider communication ">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-button variant="brand" label="Reset Button" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <c-p2c-slider-component ></c-p2c-slider-component>
+        </div>
+    </lightning-card>
+-->
+</template>

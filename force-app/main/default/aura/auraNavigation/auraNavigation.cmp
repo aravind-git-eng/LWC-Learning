@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,
+lightning:isUrlAddressable" access="global"> <!--to capcture id which is coming in Url-->
+<aura:attribute name="id" type="string"></aura:attribute>
+<aura:handler name="init" value="{!this}" action="{!c.onLoad}"></aura:handler>
+
+<div class="slds-card">Hey!! I am coming from Lwc and Rec Id is :{!v.id}</div>
+
+</aura:component>	
